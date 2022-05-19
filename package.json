@@ -1,0 +1,49 @@
+{
+  "name": "mi-ui",
+  "version": "1.0.0",
+  "private": false,
+  "description": "基于vue3 + ant-design的前端组件库",
+  "main": "lib/mi-ui.umd.min.js",
+  "keyword": "Vue3 UI Component",
+  "license": "MIT",
+  "author": {
+    "name": "yangming"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build:only": "vue-cli-service build",
+    "build": "yarn build:clean && yarn build:lib && rimraf lib/demo.html",
+    "build:clean": "rimraf lib",
+    "build:lib": "vue-cli-service build --target lib --name mi-ui --dest lib packages/index.js",
+    "lint": "vue-cli-service lint",
+    "publish": "npm publish --registry https://xxx.xxx.xx.x:xxxx/repository/npm-hosted/",
+    "deploy": "yarn build && yarn publish"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
+    "ant-design-vue": "^2.2.8",
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "prettier": "^2.4.1"
+  }
+}
